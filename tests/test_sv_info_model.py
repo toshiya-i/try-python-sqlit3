@@ -21,7 +21,7 @@ class TestServerInfo(unittest.TestCase):
 class TestServerInfoList(unittest.TestCase):
 
     def test_get_dict_normal_case1(self):
-        self.assertEqual(ServerInfoList('tests/sv_info_file_eucjp_sample.tsv', 'euc_jp').get_list(),
+        self.assertEqual(ServerInfoList('tests/sample_file/sv_info_file_eucjp_sample.tsv', 'euc_jp').get_list(),
                          [{'asset_id': u'as001', 'server_id': u'sv001', 'hogehoge': u'as001hogehoge'},
                           {'asset_id': u'as002', 'server_id': u'sv002', 'hogehoge': u''},
                           {'asset_id': u'as003', 'server_id': u'', 'hogehoge': u'as003hogehoge'},
@@ -33,7 +33,7 @@ class TestServerInfoList(unittest.TestCase):
                           {'asset_id': u'as009', 'server_id': u'sv九', 'hogehoge': u'as009hogehoge'}])
 
     def test_get_dict_normal_case2(self):
-        self.assertEqual(ServerInfoList('tests/sv_info_file_sjis_sample.tsv', 'shift_jis').get_list(),
+        self.assertEqual(ServerInfoList('tests/sample_file/sv_info_file_sjis_sample.tsv', 'shift_jis').get_list(),
                          [{'asset_id': u'as001', 'server_id': u'sv001', 'hogehoge': u'as001hogehoge'},
                           {'asset_id': u'as002', 'server_id': u'sv002', 'hogehoge': u''},
                           {'asset_id': u'as003', 'server_id': u'', 'hogehoge': u'as003hogehoge'},
@@ -45,7 +45,7 @@ class TestServerInfoList(unittest.TestCase):
                           {'asset_id': u'as009', 'server_id': u'sv九', 'hogehoge': u'as009hogehoge'}])
 
     def test_get_dict_normal_case3(self):
-        self.assertEqual(ServerInfoList('tests/sv_info_file_utf8_sample.tsv', 'utf_8').get_list(),
+        self.assertEqual(ServerInfoList('tests/sample_file/sv_info_file_utf8_sample.tsv', 'utf_8').get_list(),
                          [{'asset_id': u'as001', 'server_id': u'sv001', 'hogehoge': u'as001hogehoge'},
                           {'asset_id': u'as002', 'server_id': u'sv002', 'hogehoge': u''},
                           {'asset_id': u'as003', 'server_id': u'', 'hogehoge': u'as003hogehoge'},
@@ -58,11 +58,11 @@ class TestServerInfoList(unittest.TestCase):
 
     def test_get_dict_error_case1(self):
         with self.assertRaises(IOError):
-            ServerInfoList('tests/non.tsv', 'utf_8').get_list()
+            ServerInfoList('tests/sample_file/non.tsv', 'utf_8').get_list()
 
     def test_get_dict_error_case2(self):
         with self.assertRaises(LookupError):
-            ServerInfoList('tests/sv_info_file_utf8_sample.tsv', 'ed_error').get_list()
+            ServerInfoList('tests/sample_file/sv_info_file_utf8_sample.tsv', 'ed_error').get_list()
 
 
 if __name__ == '__main__':
