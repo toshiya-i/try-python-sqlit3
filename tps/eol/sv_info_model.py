@@ -28,6 +28,12 @@ class ServerInfoList:
                 sv_info_list.append(ServerInfo(sv_info_txt.rstrip('\n')))
         return map(lambda x: x.get_dict(), sv_info_list)
 
+    def get_id(self):
+        return 'sv_info'
+
+    def get_key(self):
+        return 'asset_id'
+
 
 if __name__ == '__main__':
     ServerInfoList('tests/sample_file/sv_info_file_eucjp_sample.tsv', 'euc_jp').get_list()
