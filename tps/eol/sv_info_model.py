@@ -22,11 +22,11 @@ class ServerInfoList:
         self.encoding = encoding
 
     def get_list(self):
-        result = []
+        sv_info_list = []
         with codecs.open(self.sv_info_file_path, 'r', self.encoding) as sv_info_file:
             for sv_info_txt in sv_info_file:
-                result.append(ServerInfo(sv_info_txt.rstrip('\n')).get_dict())
-        return result
+                sv_info_list.append(ServerInfo(sv_info_txt.rstrip('\n')))
+        return map(lambda x: x.get_dict(), sv_info_list)
 
 
 if __name__ == '__main__':
