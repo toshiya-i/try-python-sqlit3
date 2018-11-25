@@ -42,6 +42,12 @@ class HardwareEOLInfoList:
                 )
         return map(lambda x: x.get_dict(), filter(lambda x: x.is_enable(), hw_eol_info_list))
 
+    def get_id(self):
+        return 'hw_eol_info'
+
+    def get_key(self):
+        return 'asset_id'
+
 
 if __name__ == '__main__':
     HardwareEOLInfoList('tests/sample_file/hw_eol_info_file_utf8_sample.tsv', 'utf_8').get_list()
