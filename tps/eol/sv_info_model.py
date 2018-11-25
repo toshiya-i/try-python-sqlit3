@@ -30,6 +30,6 @@ class ServerInfoList:
 
 
 if __name__ == '__main__':
-    ServerInfoList('tests/sv_info_file_eucjp_sample.tsv', 'euc_jp').get_list()
-    ServerInfoList('tests/sv_info_file_sjis_sample.tsv', 'shift_jis').get_list()
-    ServerInfoList('tests/sv_info_file_utf8_sample.tsv', 'utf_8').get_list()
+    ServerInfoList('tests/sample_file/sv_info_file_eucjp_sample.tsv', 'euc_jp').get_list()
+    ServerInfoList('tests/sample_file/sv_info_file_sjis_sample.tsv', 'shift_jis').get_list()
+    ServerInfoList('tests/sample_file/sv_info_file_utf8_sample.tsv', 'utf_8').get_list()
